@@ -1,20 +1,20 @@
 import 'dart:math';
 
 import 'package:flame/components.dart';
-import 'package:tuwu/components/enemy_component.dart';
+import 'package:tuwu/components/bonus_component.dart';
 
-class EnemyCreator extends TimerComponent with HasGameRef {
+class BonusCreator extends TimerComponent with HasGameRef {
   final Random random = Random();
-  final _halfWidth = EnemyComponent.initialSize.x / 2;
+  final _halfWidth = BonusComponent.initialSize.x / 2;
 
-  EnemyCreator() : super(period: 12, repeat: true);
+  BonusCreator() : super(period: 20, repeat: true);
 
   @override
   void onTick() {
     gameRef.addAll(
       List.generate(
         5,
-        (index) => EnemyComponent(
+        (index) => BonusComponent(
           position: Vector2(
             _halfWidth + (gameRef.size.x - _halfWidth) * random.nextDouble(),
             0,

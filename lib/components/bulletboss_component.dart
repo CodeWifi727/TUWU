@@ -4,13 +4,13 @@ import 'package:tuwu/components/Boss_component.dart';
 import 'package:tuwu/components/bonus_component.dart';
 import 'package:tuwu/components/enemy_component.dart';
 
-class BulletComponent extends SpriteAnimationComponent
+class BulletBossComponent extends SpriteAnimationComponent
     with HasGameRef, CollisionCallbacks {
   static const speed = 500.0;
   late final Vector2 velocity;
   final Vector2 deltaPosition = Vector2.zero();
 
-  BulletComponent({required super.position, super.angle})
+  BulletBossComponent({required super.position, super.angle})
       : super(size: Vector2(32, 32));
 
   @override

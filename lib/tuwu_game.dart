@@ -1,9 +1,10 @@
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
+import 'package:tuwu/components/bonus_creator.dart';
 import 'package:tuwu/components/enemy_creator.dart';
 import 'package:tuwu/components/player_component.dart';
-import 'package:tuwu/components/star_background_creator.dart';
+import 'package:tuwu/components/boss_component.dart';
 
 class RogueShooterGame extends FlameGame
     with PanDetector, HasCollisionDetection {
@@ -20,6 +21,11 @@ class RogueShooterGame extends FlameGame
 
   @override
   Future<void> onLoad() async {
+    final backgroundImage = await images.load('tuwu/background.jpg');
+    add(SpriteComponent.fromImage(backgroundImage)
+      ..size = size // Assurez-vous que la taille de l'image soit la même que celle de l'écran
+    );
+    add(BonusCreator());
     add(player = PlayerComponent());
     addAll([
       FpsTextComponent(
@@ -37,9 +43,8 @@ class RogueShooterGame extends FlameGame
         priority: 1,
       ),
     ]);
-
     add(EnemyCreator());
-    add(StarBackGroundCreator());
+    add(BossComponent());
   }
 
   @override
