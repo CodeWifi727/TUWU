@@ -7,13 +7,13 @@ class BonusCreator extends TimerComponent with HasGameRef {
   final Random random = Random();
   final _halfWidth = BonusComponent.initialSize.x / 2;
 
-  BonusCreator() : super(period: 20, repeat: true);
+  BonusCreator() : super(period: 12, repeat: true);
 
   @override
   void onTick() {
     gameRef.addAll(
       List.generate(
-        5,
+        1,
         (index) => BonusComponent(
           position: Vector2(
             _halfWidth + (gameRef.size.x - _halfWidth) * random.nextDouble(),
