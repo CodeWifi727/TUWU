@@ -2,6 +2,7 @@ import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:tuwu/components/Boss_component.dart';
 import 'package:tuwu/components/bullet_component.dart';
+import 'package:tuwu/components/bulletboss_component.dart';
 import 'package:tuwu/components/enemy_component.dart';
 import 'package:tuwu/components/explosion_component.dart';
 import 'package:tuwu/components/bonus_component.dart';
@@ -22,7 +23,7 @@ class PlayerComponent extends SpriteAnimationComponent
     add(CircleHitbox());
     add(
       bulletCreator = TimerComponent(
-        period: BonusComponent.bulletspeed,
+        period: BonusComponent.bulletspeedB,
         repeat: true,
         autoStart: false,
         onTick: _createBullet,
@@ -38,7 +39,7 @@ class PlayerComponent extends SpriteAnimationComponent
     );
   }
 
-  final _bulletAngles = [0.5, 0.3, 0.0, -0.5, -0.3];
+  final _bulletAngles = [0.0];
   void _createBullet() {
     gameRef.addAll(
       _bulletAngles.map(
@@ -70,8 +71,14 @@ class PlayerComponent extends SpriteAnimationComponent
     super.onCollisionStart(intersectionPoints, other);
     if (other is BonusComponent) {
       other.takeHit();
+      if (BonusComponent.bulletspeedB > 0) {
+        onLoad();
+      }
     }
     if(other is EnemyComponent) {
+      print("you dead");
+    }
+    if (other is BulletBossComponent) {
       print("you dead");
     }
   }

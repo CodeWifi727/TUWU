@@ -6,7 +6,7 @@ import 'package:tuwu/tuwu_game.dart';
 class EnemyComponent extends SpriteAnimationComponent
     with HasGameRef<RogueShooterGame>, CollisionCallbacks {
   static const speed = 150;
-  static final Vector2 initialSize = Vector2.all(25);
+  static final Vector2 initialSize = Vector2.all(70);
 
   EnemyComponent({required super.position})
       : super(size: initialSize, anchor: Anchor.center);
@@ -17,8 +17,8 @@ class EnemyComponent extends SpriteAnimationComponent
       'tuwu/enemy.png',
       SpriteAnimationData.sequenced(
         stepTime: 0.2,
-        amount: 4,
-        textureSize: Vector2.all(16),
+        amount: 8,
+        textureSize: Vector2.all(95),
       ),
     );
     add(CircleHitbox(collisionType: CollisionType.passive));

@@ -39,8 +39,9 @@ class BulletComponent extends SpriteAnimationComponent
       other.takeHit();
       removeFromParent();
     }
-    if(other is BossComponent){
-      other.takeHit();
+    if (other is BossComponent) {
+      print("Bullet hit something!"); 
+      other.takeHit(); // Inflige des dégâts au boss
       removeFromParent();
     }
   }
@@ -59,4 +60,5 @@ class BulletComponent extends SpriteAnimationComponent
       removeFromParent();
     }
   }
+  
 }

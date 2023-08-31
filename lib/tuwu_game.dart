@@ -16,6 +16,7 @@ class RogueShooterGame extends FlameGame
   late final PlayerComponent player;
   late final TextComponent componentCounter;
   late final TextComponent scoreText;
+  static double  bulletspeed = 1.0;
 
   int score = 0;
 
@@ -26,6 +27,8 @@ class RogueShooterGame extends FlameGame
       ..size = size // Assurez-vous que la taille de l'image soit la même que celle de l'écran
     );
     add(BonusCreator());
+    add(EnemyCreator());
+    add(BossComponent());
     add(player = PlayerComponent());
     addAll([
       FpsTextComponent(
@@ -43,8 +46,6 @@ class RogueShooterGame extends FlameGame
         priority: 1,
       ),
     ]);
-    add(EnemyCreator());
-    add(BossComponent());
   }
 
   @override
