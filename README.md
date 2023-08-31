@@ -1,16 +1,6 @@
 # tuwu
 
-Shoot them up
+- Shoot them up
+![image](https://github.com/Simon42-java/TUWU/assets/77487529/0907de4e-557d-4283-8573-4ab4ec749572)
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Voici un petit jeux fait en cours 
