@@ -1,5 +1,8 @@
+import 'package:flame/flame.dart'; // Importez Flame
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
+import 'package:flutter/services.dart';
 import 'package:tuwu/components/Boss_component.dart';
 import 'package:tuwu/components/bullet_component.dart';
 import 'package:tuwu/components/bulletboss_component.dart';
